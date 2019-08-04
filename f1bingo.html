@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            background-color: #2196F3;
+            padding: 10px;
+
+        }
+
+        .bingo-grid {
+            grid-auto-rows: 115px;
+            background-color: #2196F3;
+
+        }
+
+        .grid-item {
+            background-color: rgba(213, 234, 252, 1);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+
+            margin: 0;
+        }
+
+        .text-item,
+        .heading {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .heading {
+            font-size: 30px;
+        }
+
+        .text-item {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body onload="init_board()">
     <script type="text/javascript">
         //<![CDATA[
         function get_word_list() {
@@ -131,49 +173,8 @@
         function toggle_color(elementId) {
             document.getElementById(elementId).style.backgroundColor = "#2196F3";
         }
-        //]]>
+            //]]>
     </script>
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
-            background-color: #2196F3;
-            padding: 10px;
-
-        }
-
-        .bingo-grid {
-            grid-auto-rows: 115px;
-            background-color: #2196F3;
-            
-        }
-
-        .grid-item {
-            background-color: rgba(213,234,252,1);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 20px;
-
-            margin: 0;
-        }
-
-        .text-item,
-        .heading {
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .heading {
-            font-size: 30px;
-        }
-
-        .text-item {
-            font-size: 20px;
-        }
-    </style>
-
-</head>
-
-<body onload="init_board()">
     <div class="grid-container">
         <div class="grid-item heading">B</div>
         <div class="grid-item heading">I</div>
