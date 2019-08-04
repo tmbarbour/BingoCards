@@ -52,7 +52,7 @@
                 "Home Grand Prix",
                 "Ice pop dipped in engine oil",
                 "Inside line",
-                "Is this going to be good enough?",
+                "Is this.id going to be good enough?",
                 "Keeping him honest",
                 "Less downforce ",
                 "Lights out",
@@ -105,13 +105,18 @@
 
             for (row = 0; row < 5; row++) {
                 for (column = 0; column < 5; column++) {
-                    //console.log(`Row is ${row} Column is ${column}`)
                     var element = document.querySelector(`[row='${row}'][column='${column}']`);
-                    var index = (row * 5) + column;
+                    var sizeOfArray = word_list.length;
+                    var index = Math.floor(Math.random() * (sizeOfArray + 1));
                     var word = word_list[index];
+                    var removedWord = word_list.splice(index,1);
                     element.innerHTML = `<p class="text-item">${word}</p>`;
                 }
             }
+        }
+
+        function toggle_color(elementId) {
+            document.getElementById(elementId).style.backgroundColor = "#2196F3";
         }
         //]]>
     </script>
@@ -126,6 +131,7 @@
 
         .bingo-grid {
             grid-auto-rows: 115px;
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         .grid-item {
@@ -162,79 +168,79 @@
         <div class="grid-item heading">O</div>
     </div>
     <div class="grid-container bingo-grid">
-        <div class="grid-item" item="1" row="0" column="0">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item1" row="0" column="0">
             <p class="text-item">A little too far back</p>
         </div>
-        <div class="grid-item" item="2" row="0" column="1">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item2" row="0" column="1">
             <p class="text-item">Absolutely epic</p>
         </div>
-        <div class="grid-item" item="3" row="0" column="2">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item3" row="0" column="2">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="4" row="0" column="3">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item4" row="0" column="3">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="5" row="0" column="4">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item5" row="0" column="4">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="6" row="1" column="0">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item6" row="1" column="0">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="7" row="1" column="1">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item7" row="1" column="1">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="8" row="1" column="2">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item8" row="1" column="2">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="9" row="1" column="3">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item9" row="1" column="3">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="10" row="1" column="4">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item10" row="1" column="4">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="11" row="2" column="0">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item11" row="2" column="0">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="12" row="2" column="1">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item12" row="2" column="1">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="13" row="2" column="2">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item13" row="2" column="2">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="14" row="2" column="3">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item14" row="2" column="3">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="15" row="2" column="4">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item15" row="2" column="4">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="16" row="3" column="0">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item16" row="3" column="0">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="17" row="3" column="1">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item17" row="3" column="1">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="18" row="3" column="2">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item18" row="3" column="2">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="19" row="3" column="3">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item19" row="3" column="3">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="20" row="3" column="4">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item20" row="3" column="4">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="21" row="4" column="0">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item21" row="4" column="0">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="22" row="4" column="1">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item22" row="4" column="1">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="23" row="4" column="2">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item23" row="4" column="2">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="24" row="4" column="3">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item24" row="4" column="3">
             <p class="text-item">1</p>
         </div>
-        <div class="grid-item" item="25" row="4" column="4">
+        <div class="grid-item" onClick="toggle_color(this.id)" id="item25" row="4" column="4">
             <p class="text-item">1</p>
         </div>
     </div>
