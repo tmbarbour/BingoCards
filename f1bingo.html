@@ -1,10 +1,124 @@
 <html>
 
 <head>
+    <script type="text/javascript">
+        //<![CDATA[
+        function get_word_list() {
+            return ["A little too far back",
+                "Absolutely epic",
+                "Angry",
+                "Backmarker",
+                "Battle for (x) place",
+                "Blisters",
+                "Boxing match",
+                "Braking late",
+                "Braking zone",
+                "Breathe a bit easier",
+                "Breathe a little bit ",
+                "Brilliant ",
+                "Camber",
+                "Changing of the guard",
+                "Clean air",
+                "Close battle",
+                "Come together",
+                "Commanding lead",
+                "Concertina effect",
+                "Cost him dear",
+                "Day late", " dollar short",
+                "Determined",
+                "Dirty air",
+                "Done and dusted",
+                "Down to the inside",
+                "DRS",
+                "Elbows out wide",
+                "Fastest lap",
+                "Fighting an octopus ",
+                "Find some pace",
+                "First sector",
+                "Foot tapping",
+                "Fresh tires",
+                "Get on with it",
+                "Getting away",
+                "Go to the end",
+                "Goes around the outside",
+                "Going for it",
+                "Going wide",
+                "Got some damage",
+                "Graining",
+                "Has a look",
+                "Has to back off (up)",
+                "He’s on fire",
+                "Head of the field",
+                "Home Grand Prix",
+                "Ice pop dipped in engine oil",
+                "Inside line",
+                "Is this going to be good enough?",
+                "Keeping him honest",
+                "Less downforce ",
+                "Lights out",
+                "Lock up",
+                "Looking very racy",
+                "Managing the car/tires",
+                "Medium compound",
+                "Mountain to climb",
+                "Next time around",
+                "On board with",
+                "On rails",
+                "On the defense",
+                "On the gearbox ",
+                "One stop",
+                "Penultimate corner",
+                "Plan “b”",
+                "Podium position ",
+                "Pulled the trigger",
+                "Quite special",
+                "Racing line",
+                "Ran wide",
+                "Really went for it",
+                "Rival",
+                "Roundabout",
+                "Safety car",
+                "Side by side",
+                "Sliding around ",
+                "Slippery slope",
+                "Spot on",
+                "Start pushing",
+                "Starting to hold up",
+                "Staying out",
+                "Sterling effort",
+                "Stewards will have a look",
+                "Straight line speed",
+                "Struggling",
+                "Stunning piece of driving",
+                "The run down",
+                "Two horse race",
+                "Undercut",
+                "Understeer",
+                "Unsafe release ",
+                "Virtual safety car",
+                "Wheel to wheel",
+                "Wringing the neck"];
+        }
+
+        function init_board() {
+            var word_list = get_word_list();
+
+            for (row = 0; row < 5; row++) {
+                for (column = 0; column < 5; column++) {
+                    //console.log(`Row is ${row} Column is ${column}`)
+                    var element = document.querySelector(`[row='${row}'][column='${column}']`);
+                    var index = (row * 5) + column;
+                    var word = word_list[index];
+                    element.innerHTML = `<p class="text-item">${word}</p>`;
+                }
+            }
+        }
+        //]]>
+    </script>
     <style>
         .grid-container {
             display: grid;
-            grid-template-columns: auto auto auto auto auto;
+            grid-template-columns: 20% 20% 20% 20% 20%;
             background-color: #2196F3;
             padding: 10px;
 
@@ -18,19 +132,28 @@
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
-            font-size: 30px;
+
             margin: 0;
         }
 
-        .text-item, .heading{
+        .text-item,
+        .heading {
             text-align: center;
             vertical-align: middle;
+        }
+
+        .heading {
+            font-size: 30px;
+        }
+
+        .text-item {
+            font-size: 20px;
         }
     </style>
 
 </head>
 
-<body>
+<body onload="init_board()">
     <div class="grid-container">
         <div class="grid-item heading">B</div>
         <div class="grid-item heading">I</div>
@@ -40,10 +163,10 @@
     </div>
     <div class="grid-container bingo-grid">
         <div class="grid-item" item="1" row="0" column="0">
-            <p class="text-item">1</p>
+            <p class="text-item">A little too far back</p>
         </div>
         <div class="grid-item" item="2" row="0" column="1">
-            <p class="text-item">1</p>
+            <p class="text-item">Absolutely epic</p>
         </div>
         <div class="grid-item" item="3" row="0" column="2">
             <p class="text-item">1</p>
