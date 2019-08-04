@@ -38,6 +38,21 @@
         .text-item {
             font-size: 20px;
         }
+
+        #init-div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #init-button {
+            text-align: center;
+            height: 100px;
+            width: 300px;
+            z-index: 2;
+            margin: 4px;
+        }
     </style>
 
 </head>
@@ -143,6 +158,7 @@
         }
 
         function init_board() {
+            document.getElementById('init-div').style.display = 'none';
             var word_list = get_word_list();
 
             for (row = 0; row < 5; row++) {
@@ -175,6 +191,9 @@
         }
             //]]>
     </script>
+    <div id="init-div">
+        <button onClick="init_board()" id="init-button">Let's Play!</button>
+    </div>
     <div class="grid-container">
         <div class="grid-item heading">B</div>
         <div class="grid-item heading">I</div>
