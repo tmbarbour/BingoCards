@@ -176,7 +176,7 @@
 
         function getRandomWord(wordList) {
             var sizeOfArray = wordList.length;
-            var index = Math.floor(Math.random() * (sizeOfArray + 1));
+            var index = Math.floor(Math.random() * sizeOfArray);
             var word = wordList[index];
             var removedWord = wordList.splice(index, 1);
             return word;
