@@ -55,9 +55,6 @@
         }
     </style>
 
-</head>
-
-<body onload="init_board()">
     <script type="text/javascript">
         //<![CDATA[
         function get_word_list() {
@@ -81,7 +78,7 @@
                 "Commanding lead",
                 "Concertina effect",
                 "Cost him dear",
-                "Day late", " dollar short",
+                "Day late, dollar short",
                 "Determined",
                 "Dirty air",
                 "Done and dusted",
@@ -89,7 +86,7 @@
                 //"DRS",
                 "Elbows out wide",
                 "Fastest lap",
-                "Fighting an octopus ",
+                "Fighting an octopus",
                 "Find some pace",
                 "First sector",
                 "Foot tapping",
@@ -126,7 +123,7 @@
                 "One stop",
                 "Penultimate corner",
                 "Plan 'b'",
-                "Podium position ",
+                "Podium position",
                 "Pulled the trigger",
                 "Quite special",
                 "Racing line",
@@ -147,11 +144,11 @@
                 "Straight line speed",
                 "Struggling",
                 "Stunning piece of driving",
-                "The run down",
+                "On the run down",
                 "Two horse race",
                 "Undercut",
                 "Understeer",
-                "Unsafe release ",
+                "Unsafe release",
                 "Virtual safety car",
                 "Wheel to wheel",
                 "Wringing the neck"];
@@ -176,7 +173,7 @@
 
         function getRandomWord(wordList) {
             var sizeOfArray = wordList.length;
-            var index = Math.floor(Math.random() * sizeOfArray);
+            var index = Math.floor(Math.random() * (sizeOfArray + 1));
             var word = wordList[index];
             var removedWord = wordList.splice(index, 1);
             return word;
@@ -191,6 +188,10 @@
         }
             //]]>
     </script>
+</head>
+
+<body onload="init_board()">
+
     <div id="init-div">
         <button onClick="init_board()" id="init-button">Let's Play!</button>
     </div>
