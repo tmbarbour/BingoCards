@@ -2,25 +2,24 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <style>
         .grid-container {
             display: grid;
             grid-template-columns: 20% 20% 20% 20% 20%;
-            background-color: #2196F3;
             padding: 10px;
         }
 
         .bingo-grid {
             grid-auto-rows: 115px;
-            background-color: #2196F3;
         }
 
         .grid-item {
-
             border: 1px solid rgba(0, 0, 0, 0.8);
+            vertical-align: center;
             padding: 20px;
-
             margin: 0;
+            color: white;
         }
 
         .text-item,
@@ -30,12 +29,22 @@
         }
 
         .heading {
-            background-color: rgba(213, 234, 252, 1);
+            background-color: #FF0000;
+            color: white;
             font-size: 30px;
+        }
+
+        .heading-tag {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 16px;
+            letter-spacing: 8px;
+            color: #FF0000;
         }
 
         .text-item {
             font-size: 20px;
+            font-family: "Arial"
         }
 
         #init-div {
@@ -54,11 +63,23 @@
         }
 
         .selected {
-            background-color: #2196F3;
+            background-color: #FF0000;
+            color: white;
+            opacity: .85;
         }
 
         .unselected {
-            background-color: rgba(213, 234, 252, 1);
+            background-color: rgb(216, 216, 216);
+            color: rgb(31, 30, 30);
+            opacity: .65;
+            background-clip: padding-box;
+        }
+
+        .carbon-background {
+            background-color: rgb(32, 32, 32);
+            background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+            background-size: 10px 10px, 10px 10px, 10px 5px;
+            background-position: 0px 0px, 5px 5px, 0px 0px;
         }
     </style>
 
@@ -165,7 +186,10 @@
         }
 
         function init_board() {
-            document.getElementById('init-div').style.display = 'none';
+            var init_div = document.getElementById('init-div');
+            if (init_div) {
+                init_div.style.display = 'none';
+            }
             var word_list = get_word_list();
 
             for (row = 0; row < 5; row++) {
@@ -178,12 +202,14 @@
 
         function setGridCell(row, column, word) {
             var element = document.querySelector(`[row='${row}'][column='${column}']`);
-            element.innerHTML = `<p class="text-item">${word}</p>`;
+            if (element) {
+                element.innerHTML = `<p class="text-item">${word}</p>`;
+            }
         }
 
         function getRandomWord(wordList) {
             var sizeOfArray = wordList.length;
-            var index = Math.floor(Math.random() * (sizeOfArray + 1));
+            var index = Math.floor(Math.random() * (sizeOfArray));
             var word = wordList[index];
             var removedWord = wordList.splice(index, 1);
             return word;
@@ -211,18 +237,21 @@
     </script>
 </head>
 
-<body onload="init_board()">
+<body onload="init_board()" class="carbon-background">
     <div id="init-div">
         <button onClick="init_board()" id="init-button">Let's Play!</button>
     </div>
-    <div class="grid-container">
+    <div class="carbon-background heading-tag">
+        Formula 1
+    </div>
+    <div class="grid-container carbon-background">
         <div class="grid-item heading">B</div>
         <div class="grid-item heading">I</div>
         <div class="grid-item heading">N</div>
         <div class="grid-item heading">G</div>
         <div class="grid-item heading">O</div>
     </div>
-    <div class="grid-container bingo-grid">
+    <div class="grid-container carbon-background" class="bingo-grid">
         <div class="grid-item unselected" onClick="toggle_color(this.id)" id="item1" row="0" column="0">
             <p class="text-item"><i>F1</i></p>
         </div>
@@ -298,6 +327,7 @@
         <div class="grid-item unselected" onClick="toggle_color(this.id)" id="item25" row="4" column="4">
             <p class="text-item"><i>F1</i></p>
         </div>
+    </div>
     </div>
 </body>
 
