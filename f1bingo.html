@@ -85,116 +85,156 @@
 
     <script type="text/javascript">
         //<![CDATA[
-        function get_word_list() {
-            return ["A little too far back",
+
+        var board_initialized = false;
+
+        var count = new Map;
+        count["easy"] = 20;
+        count["mid"] = 4;
+        count["hard"] = 1;
+        var easy_ratio = 0.8;
+        var mid_ratio = 0.9;
+
+        var easy_word_list = [];
+        var mid_word_list = [];
+        var hard_word_list = [];
+
+        function init_word_list() {
+
+            easy_word_list = ["Backmarker",
+                "Brilliant ",
+                "Clean air",
+                "Dirty air",
+                //"DRS",
+                "Fastest lap",
+                "Find some pace (or)\nHas the pace",
+                "First sector",
+                "Fresh tires",
+                "Go to the end",
+                "Goes around the outside",
+                "Less downforce ",
+                "Lock up",
+                "Medium compound",
+                "Middle sector",
+                "One stop",
+                "One-two finish",
+                "Podium position ",
+                "Racing line",
+                "Ran wide",
+                "Rival",
+                "Run off area",
+                "Safety car",
+                "Staying out",
+                "Straight line speed",
+                "Struggling",
+                "Track position",
+                "Undercut",
+                "Wheel to wheel"
+            ];
+
+            mid_word_list = ["A little too far back",
                 "Absolutely epic",
                 "Angry",
-                "Backmarker",
                 "Battle for (x) place",
                 "Blisters",
-                "Boxing match",
                 "Braking late",
                 "Braking zone",
-                "Breathe a bit easier",
-                "Breathe a little bit ",
-                "Brilliant ",
                 "Camber",
-                "Changing of the guard",
-                "Chicane",
-                "Clean air",
                 "Close battle",
                 "Come together",
                 "Commanding lead",
                 "Concertina effect",
-                "Cost him dear",
-                "Day late, dollar short",
                 "Determined",
-                "Dirty air",
+                "Dodgy",
                 "Done and dusted",
                 "Down to the inside",
-                //"DRS",
-                "Elbows out wide",
-                "Fastest lap",
-                "Fighting an octopus",
-                "Find some pace",
-                "First sector",
-                "Foot tapping",
-                "Fresh tires",
                 "Get on with it",
                 "Getting away",
-                "Go to the end",
-                "Goes around the outside",
                 "Going for it",
                 "Going wide",
                 "Got some damage",
                 "Graining",
-                "Grid Penalty",
                 "Has a look",
                 "Has to back off (up)",
-                "He’s on fire",
-                "Head of the field",
-                "Home Grand Prix",
-                "Ice pop dipped in engine oil",
                 "Inside line",
-                "Is this going to be good enough?",
                 "Keeping him honest",
-                "Less downforce ",
-                "Lights out",
-                "Lock up",
                 "Looking very racy",
                 "Managing the car/tires",
-                "Medium compound",
-                "Mountain to climb",
+                "Melee ",
                 "Next time around",
-                "On board with...",
-                "On rails",
+                "On board with",
                 "On the defense",
                 "On the gearbox ",
-                "One stop",
                 "Penultimate corner",
-                "Plan 'b'",
-                "Podium position",
-                "Pulled the trigger",
+                "Plan “b”",
                 "Quite special",
-                "Racing line",
-                "Ran wide",
                 "Really went for it",
-                "Rival",
                 "Roundabout",
-                "Safety car",
-                "Sector 2",
                 "Side by side",
                 "Sliding around ",
                 "Slippery slope",
                 "Spot on",
                 "Start pushing",
                 "Starting to hold up",
-                "Staying out",
                 "Sterling effort",
                 "Stewards will have a look",
-                "Straight line speed",
-                "Struggling",
+                "Striking distance",
                 "Stunning piece of driving",
-                "On the run down",
-                "Two horse race",
-                "Undercut",
+                "The run down",
                 "Understeer",
-                "Unsafe release",
-                "Virtual safety car",
-                "Wheel to wheel",
-                "Wringing the neck"];
+                "Unsafe release ",
+                "Virtual safety car"
+            ];
+
+            hard_word_list = ["Bit between his teeth",
+                "Boxing match",
+                "Breathe a bit easier",
+                "Breathe a little bit ",
+                "Changing of the guard",
+                "Cork in the bottle",
+                "Cost him dear",
+                "Day late, dollar short",
+                "Elbows out wide",
+                "Fighting an octopus ",
+                "Foot tapping",
+                "He’s on fire",
+                "Head of the field",
+                "Home Grand Prix",
+                "Ice pop dipped in engine oil",
+                "Is this going to be good enough?",
+                "Lights out",
+                "Mountain to climb",
+                "On rails",
+                "Pulled the trigger",
+                "Sleeping policeman",
+                "Smells his prey",
+                "Stubborn bull",
+                "To-ing and fro-ing",
+                "Two horse race",
+                "Very nasty",
+                "World of pain",
+                "Wringing the neck"
+            ];
         }
 
         function init_board() {
+            init_word_list();
+            set_challenge_level(1);
+
+            create_board();
+            board_initialized = true;
+        }
+
+        function create_board() {
             var init_div = document.getElementById('init-div');
             if (init_div) {
                 init_div.style.display = 'none';
             }
-            var word_list = get_word_list();
 
             for (row = 0; row < 5; row++) {
                 for (column = 0; column < 5; column++) {
-                    setGridCell(row, column, getRandomWord(word_list));
+                    var word = get_cell_word();
+                    setGridCell(row, column, word);
                 }
             }
             setFreeSpace();
@@ -207,11 +247,62 @@
             }
         }
 
-        function getRandomWord(wordList) {
+        function get_cell_word() {
+            count.forEach(function (value, index) {
+                console.log(`Key is ${value}`);
+            });
+
+            var word_list = "easy"
+
+            var random_number = Math.random();
+            if (random_number > mid_ratio) {
+                if (count["hard"] > 0) {
+                    count["hard"] -= 1;
+                    word_list = "hard"
+                }
+            }
+            if (random_number > easy_ratio) {
+                if (count["mid"] > 0) {
+                    count["mid"] -= 1;
+                    word_list = "mid"
+                }
+            }
+
+            if (word_list === "easy") {
+                if (count["easy"] > 0) {
+                    count["easy"] -= 1;
+                    word_list = "easy"
+                } else {
+                    if (count["hard"] > 0) {
+                        count["hard"] -= 1;
+                        word_list = "hard"
+                    } else {
+                        count["mid"] -= 1;
+                        word_list = "mid"
+                    }
+                }
+            }
+
+            return getRandomWord(word_list)
+        }
+
+        function getRandomWord(wordListCategory) {
+            var wordList = easy_word_list;
+            if (wordListCategory === "mid") {
+                wordList = mid_word_list;
+            } else if (wordListCategory === "hard") {
+                wordList = hard_word_list;
+            }
+
             var sizeOfArray = wordList.length;
             var index = Math.floor(Math.random() * (sizeOfArray));
             var word = wordList[index];
             var removedWord = wordList.splice(index, 1);
+
+            if (typeof word === "undefined" || word === "undefinded") {
+                console.log("WORD IS UNDEFINED");
+            }
+
             return word;
         }
 
@@ -228,6 +319,25 @@
                 classValue = classValue.replace("unselected", "selected")
             }
             document.getElementById(elementId).setAttribute("class", classValue);
+        }
+
+        function set_challenge_level(challenge_level) {
+            var cells = 25;
+            count["hard"] = challenge_level;
+            cells -= challenge_level;
+            count["mid"] = challenge_level * 4;
+            cells -= (challenge_level * 4);
+            count["easy"] = cells;
+
+            easy_ratio = count["easy"] / 25.0;
+            mid_ratio = (count["easy"] + count["mid"]) / 25.0;
+
+            console.log(`Challenge level: ${challenge_level}`);
+            console.log(`Hard: ${count["hard"]}`);
+            console.log(`Mid: ${count["mid"]}`);
+            console.log(`Easy: ${count["easy"]}`);
+            console.log(`Easy Ratio: ${easy_ratio}`);
+            console.log(`Mid Ratio: ${mid_ratio}`);
         }
 
         window.onload = function () {
