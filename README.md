@@ -7,6 +7,8 @@ When the page is loaded (or refreshed) it will create a new random bingo card. A
 
 Click here to try it out [Racing Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/RacingBingo/blob/master/f1bingo.html)
 
+[bit.ly link] (https://bit.ly/2MKj2LD)
+
 Screenshot
 ![Screenshot](https://github.com/tmbarbour/RacingBingo/blob/master/images/F1-BingoCard.png)
 
