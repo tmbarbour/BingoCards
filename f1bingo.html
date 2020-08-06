@@ -2,95 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: 20% 20% 20% 20% 20%;
-            padding: 10px;
-        }
-
-        .bingo-grid {
-            grid-auto-rows: 115px;
-        }
-
-        .grid-item {
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            vertical-align: center;
-            padding: 20px;
-            margin: 0;
-            color: white;
-        }
-
-        .text-item,
-        .heading {
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .heading {
-            background-color: #FF0000;
-            color: white;
-            font-size: 30px;
-        }
-
-        .heading-tag {
-            text-align: center;
-            vertical-align: middle;
-            font-size: 16px;
-            letter-spacing: 8px;
-            color: #FF0000;
-        }
-
-        .text-item {
-            font-size: 20px;
-            font-family: "Arial"
-        }
-
-        #init-div {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #init-button {
-            text-align: center;
-            height: 100px;
-            width: 300px;
-            z-index: 2;
-            margin: 4px;
-        }
-
-        .selected {
-            background-color: #FF0000;
-            color: white;
-            opacity: .85;
-        }
-
-        .unselected {
-            background-color: rgb(216, 216, 216);
-            color: rgb(31, 30, 30);
-            opacity: .65;
-            background-clip: padding-box;
-        }
-
-        .carbon-background {
-            background-color: rgb(32, 32, 32);
-            background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
-            background-size: 10px 10px, 10px 10px, 10px 5px;
-            background-position: 0px 0px, 5px 5px, 0px 0px;
-        }
-    </style>
 
     <script type="text/javascript">
         //<![CDATA[
-
+        
         var board_initialized = false;
-
         var count = new Map;
-        count["easy"] = 20;
-        count["mid"] = 4;
-        count["hard"] = 1;
+        count["easy"] = 20; // Number of easy words on a card
+        count["mid"] = 4;   // Number of mid difficulty words on a card
+        count["hard"] = 1;  // Number of hard words on a card
         var easy_ratio = 0.8;
         var mid_ratio = 0.9;
 
@@ -98,13 +18,15 @@
         var mid_word_list = [];
         var hard_word_list = [];
 
+        var TITLE_OF_BINGO_PAGE = "Formula 1";   
+        var CENTER_SQUARE_WORD = "DRS"; // Value in the center/free square
+
         function init_word_list() {
 
             easy_word_list = ["Backmarker",
                 "Brilliant ",
                 "Clean air",
                 "Dirty air",
-                //"DRS",
                 "Fastest lap",
                 "Find some pace (or)\nHas the pace",
                 "First sector",
@@ -154,12 +76,12 @@
                 "Got some damage",
                 "Graining",
                 "Has a look",
-                "Has to back off (up)",
+                "Has to back off/up",
                 "Inside line",
                 "Keeping him honest",
                 "Looking very racy",
                 "Managing the car/tires",
-                "Melee ",
+                "Melee",
                 "Next time around",
                 "On board with",
                 "On the defense",
@@ -181,7 +103,7 @@
                 "Stunning piece of driving",
                 "The run down",
                 "Understeer",
-                "Unsafe release ",
+                "Unsafe release",
                 "Virtual safety car"
             ];
 
@@ -215,7 +137,7 @@
                 "Wringing the neck"
             ];
         }
-
+        
         function init_board() {
             init_word_list();
             set_challenge_level(1);
@@ -298,7 +220,7 @@
             var word = wordList[index];
             var removedWord = wordList.splice(index, 1);
 
-            if (typeof word === "undefined" || word === "undefinded") {
+            if (typeof word === "undefined" || word === "undefined") {
                 console.log("WORD IS UNDEFINED");
             }
 
@@ -306,7 +228,7 @@
         }
 
         function setFreeSpace() {
-            setGridCell(2, 2, 'DRS');
+            setGridCell(2, 2, CENTER_SQUARE_WORD);
         }
 
         function toggle_color(elementId) {
@@ -339,20 +261,102 @@
             console.log(`Mid Ratio: ${mid_ratio}`);
         }
 
-        window.onload = function () {
-            init_board();
-        }();
-            //]]>
+        function set_title(){
+            document.getElementById("title").innerHTML = TITLE_OF_BINGO_PAGE;
+        };
+
+        document.addEventListener("DOMContentLoaded", function(){
+            set_title();
+        });
+        //]]>
     </script>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            padding: 10px;
+        }
+
+        .bingo-grid {
+            grid-auto-rows: 115px;
+        }
+
+        .grid-item {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            vertical-align: center;
+            padding: 20px;
+            margin: 0;
+            color: white;
+        }
+
+        .text-item,
+        .heading {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .heading {
+            background-color: #FF0000;
+            color: white;
+            font-size: 30px;
+        }
+
+        .heading-tag {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 16px;
+            letter-spacing: 8px;
+            color: #FF0000;
+        }
+
+        .text-item {
+            font-size: 20px;
+            font-family: "Arial"
+        }
+
+        #init-div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #init-button {
+            text-align: center;
+            height: 100px;
+            width: 300px;
+            z-index: 2;
+            margin: 4px;
+        }
+
+        .selected {
+            background-color: #FF0000;
+            color: white;
+            opacity: .85;
+        }
+
+        .unselected {
+            background-color: rgb(216, 216, 216);
+            color: rgb(31, 30, 30);
+            opacity: .65;
+            background-clip: padding-box;
+        }
+
+        .carbon-background {
+            background-color: rgb(32, 32, 32);
+            background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+            background-size: 10px 10px, 10px 10px, 10px 5px;
+            background-position: 0px 0px, 5px 5px, 0px 0px;
+        }
+    </style>    
 </head>
 
 <body onload="init_board()" class="carbon-background">
     <div id="init-div">
         <button onClick="init_board()" id="init-button">Let's Play!</button>
     </div>
-    <div class="carbon-background heading-tag">
-        Formula 1
-    </div>
+    <div id="title" class="carbon-background heading-tag">Title</div>
     <div class="grid-container carbon-background">
         <div class="grid-item heading">B</div>
         <div class="grid-item heading">I</div>
@@ -439,5 +443,4 @@
     </div>
     </div>
 </body>
-
 </html>
