@@ -12,6 +12,8 @@ Click here to try it out [Racing Bingo](https://htmlpreview.github.io/?https://g
 Screenshot
 ![Screenshot](https://github.com/tmbarbour/RacingBingo/blob/master/images/F1-BingoCard.png)
 
+>Note: This can easily be modified to be any kind of bingo. Simply change the *TITLE_OF_BINGO_PAGE* variable. Then customize the list of word in three categories *easy_word_list*, *mid_word_list* and *hard_word_list* in the script tag.
+
 ## Authors
 
 * **Troy Barbour** - *Initial work* - [tmbarbour](https://github.com/tmbarbour)
