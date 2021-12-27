@@ -18,123 +18,52 @@
         var mid_word_list = [];
         var hard_word_list = [];
 
-        var TITLE_OF_BINGO_PAGE = "Formula 1";   
-        var CENTER_SQUARE_WORD = "DRS"; // Value in the center/free square
+        var TITLE_OF_BINGO_PAGE = "Hallmark Christmas Movie Bingo";   
+        var CENTER_SQUARE_WORD = "Kiss at the end of the movie"; // Value in the center/free square
 
         function init_word_list() {
 
-            easy_word_list = ["Backmarker",
-                "Brilliant ",
-                "Clean air",
-                "Dirty air",
-                "Fastest lap",
-                "Find some pace (or)\nHas the pace",
-                "First sector",
-                "Fresh tires",
-                "Go to the end",
-                "Goes around the outside",
-                "Less downforce ",
-                "Lock up",
-                "Medium compound",
-                "Middle sector",
-                "One stop",
-                "One-two finish",
-                "Podium position ",
-                "Racing line",
-                "Ran wide",
-                "Rival",
-                "Run off area",
-                "Safety car",
-                "Staying out",
-                "Straight line speed",
-                "Struggling",
-                "Track position",
-                "Undercut",
-                "Wheel to wheel"
+            easy_word_list = ["Decorating cookies",
+                "Snowball fight ",
+                "Build a snowman",
+                "A long look back",
+                "Trimming the Christmas tree",
+                "More than 1 tree in the house",
+                "More than 1 winter coat on travel",
+                "More than 2 sets of boots on travel",
+                "More than 3 purses on travel",
+                "More than 4 interior wreaths",
+                "High school sweethearts",
+                "Lighted strands in the kitchen",
+                "Interrupted kiss",
+                "The 'Misunderstanding'",
+                "Christmas Market",
+                "Seeing them hug/kiss someone else",
+                "Stuck in a snowstorm",
+                "Making gingerbread house",
+                "Drinking hot cocoa",
+                "Dancing",
+                "Decorated Christmas trees on the sidewalk",
+                "Breaking up with existing boyfriend / girlfriend",
+                "Existing boyfriend / girlfriend always on the phone",
+                "Donating to a Christmas charity",
+                "Video call with a friend"
             ];
 
-            mid_word_list = ["A little too far back",
-                "Absolutely epic",
-                "Angry",
-                "Battle for (x) place",
-                "Blisters",
-                "Braking late",
-                "Braking zone",
-                "Camber",
-                "Close battle",
-                "Come together",
-                "Commanding lead",
-                "Concertina effect",
-                "Determined",
-                "Dodgy",
-                "Done and dusted",
-                "Down to the inside",
-                "Get on with it",
-                "Getting away",
-                "Going for it",
-                "Going wide",
-                "Got some damage",
-                "Graining",
-                "Has a look",
-                "Has to back off/up",
-                "Inside line",
-                "Keeping him honest",
-                "Looking very racy",
-                "Managing the car/tires",
-                "Melee",
-                "Next time around",
-                "On board with",
-                "On the defense",
-                "On the gearbox ",
-                "Penultimate corner",
-                "Plan “b”",
-                "Quite special",
-                "Really went for it",
-                "Roundabout",
-                "Side by side",
-                "Sliding around ",
-                "Slippery slope",
-                "Spot on",
-                "Start pushing",
-                "Starting to hold up",
-                "Sterling effort",
-                "Stewards will have a look",
-                "Striking distance",
-                "Stunning piece of driving",
-                "The run down",
-                "Understeer",
-                "Unsafe release",
-                "Virtual safety car"
+            mid_word_list = ["Working for the big promotion",
+                "Working on a novel",
+                "Taking over the family business",
+                "Photo booth",
+                "Christmas wish",
+                "Saving the family farm/inn",
+                "Kiss before the end of the movie",
+                "Deceased relative",
+                "Real Estate developer"
             ];
 
-            hard_word_list = ["Bit between his teeth",
-                "Boxing match",
-                "Breathe a bit easier",
-                "Breathe a little bit ",
-                "Changing of the guard",
-                "Cork in the bottle",
-                "Cost him dear",
-                "Day late, dollar short",
-                "Elbows out wide",
-                "Fighting an octopus ",
-                "Foot tapping",
-                "He’s on fire",
-                "Head of the field",
-                "Home Grand Prix",
-                "Ice pop dipped in engine oil",
-                "Is this going to be good enough?",
-                "Lights out",
-                "Mountain to climb",
-                "On rails",
-                "Pulled the trigger",
-                "Sleeping policeman",
-                "Smells his prey",
-                "Stubborn bull",
-                "To-ing and fro-ing",
-                "Two horse race",
-                "Very nasty",
-                "World of pain",
-                "Wringing the neck"
+            hard_word_list = ["Widow/widower",
+                "Seeking parental approval",
+                "Proposal"
             ];
         }
         
@@ -297,7 +226,7 @@
         }
 
         .heading {
-            background-color: #FF0000;
+            background-color: #32a852;
             color: white;
             font-size: 30px;
         }
@@ -331,7 +260,7 @@
         }
 
         .selected {
-            background-color: #FF0000;
+            background-color: #d10023;
             color: white;
             opacity: .85;
         }
@@ -348,6 +277,13 @@
             background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
             background-size: 10px 10px, 10px 10px, 10px 5px;
             background-position: 0px 0px, 5px 5px, 0px 0px;
+        }
+
+        .surprise {
+            font-style:italic;
+            color:greenyellow;
+            font-size: 20px;
+            margin-left: 20px;
         }
     </style>    
 </head>
@@ -441,7 +377,8 @@
             <p class="text-item"><i>F1</i></p>
         </div>
     </div>
-    </div>
+    <p class="surprise">Free square if you are surprised by the ending</p>
+</div>
 </body>
 <script type="text/javascript">
     document.getElementById("title").innerHTML = TITLE_OF_BINGO_PAGE;
