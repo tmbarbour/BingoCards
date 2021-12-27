@@ -5,11 +5,11 @@ The web page creates a Bingo card with traditional Hallmark Movie formula elemen
 
 When the page is loaded (or refreshed) it will build a new random bingo card. A you watch the movie and recognize a traditional Hallmark movie element, click on the square to change the color (be careful not to refresh the page during the movie). The pages can be printed if desired.
 
-Click here to try it out [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/RacingBingo/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_
+Click here to try it out [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_
 
 
 Screenshot
-![Screenshot](https://github.com/tmbarbour/RacingBingo/blob/hallmark-christmas/images/HallmarkChristmasBingo.png)
+![Screenshot](https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/images/HallmarkChristmasBingo.png)
 
 ## Authors
 
