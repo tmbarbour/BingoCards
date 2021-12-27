@@ -1,9 +1,9 @@
 # Bingo Card Generator
 A single interactive HTML page to make watching something with a friend a little more enjoyable.
 
-It fills a Bingo card with a list of 'Easy', 'Middle', and 'Hard' words
+It fills a Bingo card with a entries from lists of 'Easy', 'Middle', and 'Hard' words. Depending on what difficulty level is chosen, the cards are filled mostly with Easy, a few Middle and token hard entries, plus a standard, 'free' middle square.
 
-When the page is loaded (or refreshed) it will create a new random bingo card. As you watch or hear the commentators click on the appropriate square. Can you get five in a row, either up down or diagonally before the end ? It can certianly make the race a little more interesting than watching one or two cars run out to a 30 second lead and lap half the field
+When the page is loaded (or refreshed) it will create a new random bingo card. As you watch or hear the commentators, click on the appropriate square. Can you get five in a row, either up down or diagonally before the end?
 
 There are a couple of branches in the repository that you can try out:
 * [Formula One Racing Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/FormulaOne/f1bingo.html)
