@@ -1,17 +1,15 @@
 # Hallmark Movie Bingo
-A single interactive HTML page to make watching a Hallmark Christmas, a little more fun with a friend.
+A single interactive HTML page to make watching a Hallmark Christmas movie a little more fun with a friend.
 
-It fills a Bingo card with the traditional Hallmark Movie formula elements.
+The web page creates a Bingo card with traditional Hallmark Movie formula elements.
 
-When the page is loaded (or refreshed) it will create a new random bingo card. A you watch the movie and recognize a traditional Hallmark movie element, click on the square to change the color (be careful not to refresh the page during the movie). The pages can be printed if desired.
+When the page is loaded (or refreshed) it will build a new random bingo card. A you watch the movie and recognize a traditional Hallmark movie element, click on the square to change the color (be careful not to refresh the page during the movie). The pages can be printed if desired.
 
-Click here to try it out [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/RacingBingo/blob/hallmark-christmas/hallmarkChristmas.html)
+Click here to try it out [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/RacingBingo/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_
 
 
 Screenshot
 ![Screenshot](https://github.com/tmbarbour/RacingBingo/blob/hallmark-christmas/images/HallmarkChristmasBingo.png)
-
->Note: This can easily be modified to be any kind of bingo. Simply change the *TITLE_OF_BINGO_PAGE* variable. Then customize the list of words in three categories *easy_word_list*, *mid_word_list* and *hard_word_list* in the script tag.
 
 ## Authors
 
