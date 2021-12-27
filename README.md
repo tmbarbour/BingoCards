@@ -1,16 +1,18 @@
-# Racing Bingo
-A single interactive HTML page to make watching racing, especially F1, a little more interesting than watching a parade.
+# Bingo Card Generator
+A single interactive HTML page to make watching something with a friend a little more enjoyable.
 
-It fills a Bingo card with commentary gems from Sky Racing's commentators, David Croft and Martin Brundle.
+It fills a Bingo card with a list of 'Easy', 'Middle', and 'Hard' words
 
-When the page is loaded (or refreshed) it will create a new random bingo card. As you hear the commentators mention the "Concertina effect" or the "Sterling effort" a driver is doing, click on the appropriate square. Can you get five in a row, either up down or diagonally before the end of the race? It can certianly make the race a little more interesting than watching one or two cars run out to a 30 second lead and lap half the field
+When the page is loaded (or refreshed) it will create a new random bingo card. As you watch or hear the commentators click on the appropriate square. Can you get five in a row, either up down or diagonally before the end ? It can certianly make the race a little more interesting than watching one or two cars run out to a 30 second lead and lap half the field
 
-Click here to try it out [Racing Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/RacingBingo/blob/master/f1bingo.html)
-
-[bit.ly link] (https://bit.ly/2MKj2LD)
+There are a couple of branches in the repository that you can try out:
+* [Formula One Racing Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/FormulaOne/f1bingo.html)
+* [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_
 
 Screenshot
-![Screenshot](https://github.com/tmbarbour/RacingBingo/blob/master/images/F1-BingoCard.png)
+![F1 Screenshot](https://github.com/tmbarbour/RacingBingo/blob/master/images/F1-BingoCard.png)
+![Hallmark Movie Screenshot](https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/images/HallmarkChristmasBingo.png)
+
 
 >Note: This can easily be modified to be any kind of bingo. Simply change the *TITLE_OF_BINGO_PAGE* variable. Then customize the list of words in three categories *easy_word_list*, *mid_word_list* and *hard_word_list* in the script tag.
 
