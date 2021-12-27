@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
 
     <script type="text/javascript">
         //<![CDATA[
-        
+
         var board_initialized = false;
         var count = new Map;
         count["easy"] = 20; // Number of easy words on a card
@@ -18,7 +19,7 @@
         var mid_word_list = [];
         var hard_word_list = [];
 
-        var TITLE_OF_BINGO_PAGE = "Hallmark Christmas Movie Bingo";   
+        var TITLE_OF_BINGO_PAGE = "Hallmark Christmas Movie Bingo";
         var CENTER_SQUARE_WORD = "Kiss at the end of the movie"; // Value in the center/free square
 
         function init_word_list() {
@@ -59,7 +60,7 @@
                 "Christmas wish",
                 "Saving the family house / farm / inn / business",
                 "A kiss before the end of the movie",
-                "Deceased relative mentioned more than once<p class=\"note-item\">Bonus free square if more than one</p>",
+                "Deceased relative mentioned more than once<p class=\"note-item\">Bonus free square if more than one relative</p>",
                 "Real Estate developer",
                 "'Mistletoe'<p class=\"note-item\">Bonus free square if it has proper white berries</p>"
             ];
@@ -71,7 +72,7 @@
                 "Santa Look-alike"
             ];
         }
-        
+
         function init_board() {
             init_word_list();
             set_challenge_level(1);
@@ -195,11 +196,11 @@
             console.log(`Mid Ratio: ${mid_ratio}`);
         }
 
-        function set_title(){
+        function set_title() {
             document.getElementById("title").innerHTML = TITLE_OF_BINGO_PAGE;
         };
 
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function () {
             set_title();
         });
         //]]>
@@ -292,17 +293,18 @@
         }
 
         .surprise {
-            font-style:italic;
-            color:greenyellow;
+            font-style: italic;
+            color: greenyellow;
             font-size: 20px;
             margin-left: 20px;
         }
-    </style>    
+    </style>
 </head>
 
 <body onload="init_board()" class="carbon-background">
     <div id="init-div">
-    HM    <button onClick="init_board()" id="init-button">Let's Play! <p class=\"note-item\">Click to Start</p></button>
+        HM <button onClick="init_board()" id="init-button">Let's Play! <p class=\"note-item\">Click to Start</p>
+            </button>
     </div>
     <div id="title" class="carbon-background heading-tag">Title</div>
     <div class="grid-container carbon-background">
@@ -390,9 +392,10 @@
         </div>
     </div>
     <p class="surprise">Free square if you are surprised by the ending</p>
-</div>
+    </div>
 </body>
 <script type="text/javascript">
     document.getElementById("title").innerHTML = TITLE_OF_BINGO_PAGE;
 </script>
+
 </html>
