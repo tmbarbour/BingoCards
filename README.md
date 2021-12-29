@@ -7,7 +7,7 @@ When the page is loaded (or refreshed) it will create a new random bingo card. A
 
 There are a couple of branches in the repository that you can try out:
 * [Formula One Racing Bingo Card](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/FormulaOne/f1bingo.html) -> [F1 Github Branch](https://github.com/tmbarbour/BingoCards/tree/FormulaOne)
-* [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_ -> [Hallmark Christmas Movie Github Branch] (https://github.com/tmbarbour/BingoCards/tree/hallmark-christmas)
+* [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_ -> [Hallmark Christmas Movie Github Branch](https://github.com/tmbarbour/BingoCards/tree/hallmark-christmas)
 
 Screenshot
 ![F1 Screenshot](https://github.com/tmbarbour/RacingBingo/blob/master/images/F1-BingoCard.png)
