@@ -6,12 +6,12 @@ It fills a Bingo card with a entries from lists of 'Easy', 'Middle', and 'Hard' 
 When the page is loaded (or refreshed) it will create a new random bingo card. As you watch or hear the commentators, click on the appropriate square. Can you get five in a row, either up down or diagonally before the end?
 
 There are a couple of branches in the repository that you can try out:
-* [Formula One Racing Bingo Card](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/FormulaOne/f1bingo.html) [F1 Github Branch](https://github.com/tmbarbour/BingoCards/tree/FormulaOne)
-* [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_
+* [Formula One Racing Bingo Card](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/FormulaOne/f1bingo.html) -> [F1 Github Branch](https://github.com/tmbarbour/BingoCards/tree/FormulaOne)
+* [Hallmark Movie Bingo](https://htmlpreview.github.io/?https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/hallmarkChristmas.html). _(Click "Let's Play" to begin)_ -> [Hallmark Christmas Movie Github Branch] (https://github.com/tmbarbour/BingoCards/tree/hallmark-christmas)
 
 Screenshot
 ![F1 Screenshot](https://github.com/tmbarbour/RacingBingo/blob/master/images/F1-BingoCard.png)
-![Hallmark Movie Screenshot](https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/images/HallmarkChristmasBingo.png) [Hallmark Christmas Movie Github Branch] (https://github.com/tmbarbour/BingoCards/tree/hallmark-christmas)
+![Hallmark Movie Screenshot](https://github.com/tmbarbour/BingoCards/blob/hallmark-christmas/images/HallmarkChristmasBingo.png) 
 
 
 >Note: This can easily be modified to be any kind of bingo. Simply change the *TITLE_OF_BINGO_PAGE* variable. Then customize the list of words in three categories *easy_word_list*, *mid_word_list* and *hard_word_list* in the script tag.
