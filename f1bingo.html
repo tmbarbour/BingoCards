@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
 
     <script type="text/javascript">
         //<![CDATA[
-        
+
         var board_initialized = false;
         var count = new Map;
         count["easy"] = 20; // Number of easy words on a card
@@ -18,7 +19,7 @@
         var mid_word_list = [];
         var hard_word_list = [];
 
-        var TITLE_OF_BINGO_PAGE = "Formula 1";   
+        var TITLE_OF_BINGO_PAGE = "Formula 1";
         var CENTER_SQUARE_WORD = "DRS"; // Value in the center/free square
 
         function init_word_list() {
@@ -137,7 +138,7 @@
                 "Wringing the neck"
             ];
         }
-        
+
         function init_board() {
             init_word_list();
             set_challenge_level(1);
@@ -261,11 +262,11 @@
             console.log(`Mid Ratio: ${mid_ratio}`);
         }
 
-        function set_title(){
+        function set_title() {
             document.getElementById("title").innerHTML = TITLE_OF_BINGO_PAGE;
         };
 
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function () {
             set_title();
         });
         //]]>
@@ -299,19 +300,19 @@
         .heading {
             background-color: #FF0000;
             color: white;
-            font-size: 30px;
+            font-size:larger;
         }
 
         .heading-tag {
             text-align: center;
             vertical-align: middle;
-            font-size: 16px;
+            font-size:medium;
             letter-spacing: 8px;
             color: #FF0000;
         }
 
         .text-item {
-            font-size: 20px;
+            font-size:medium;
             font-family: "Arial"
         }
 
@@ -349,7 +350,21 @@
             background-size: 10px 10px, 10px 10px, 10px 5px;
             background-position: 0px 0px, 5px 5px, 0px 0px;
         }
-    </style>    
+
+        @media print {
+            @page {
+                margin: 0.75in;
+            }
+
+            .grid-container {
+                padding: 5px;
+            }
+
+            .grid-item {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body onload="init_board()" class="carbon-background">
@@ -446,4 +461,5 @@
 <script type="text/javascript">
     document.getElementById("title").innerHTML = TITLE_OF_BINGO_PAGE;
 </script>
+
 </html>
