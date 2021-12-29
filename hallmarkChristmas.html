@@ -237,24 +237,24 @@
         .heading {
             background-color: #32a852;
             color: white;
-            font-size: 30px;
+            font-size:larger;
         }
 
         .heading-tag {
             text-align: center;
             vertical-align: middle;
-            font-size: 16px;
+            font-size:medium;
             letter-spacing: 8px;
             color: #FF0000;
         }
 
         .text-item {
-            font-size: 20px;
+            font-size: medium;
             font-family: "Arial"
         }
 
         .note-item {
-            font-size: 15px;
+            font-size:small;
             font-family: "Arial";
             font-style: italic;
             text-align: center;
@@ -298,9 +298,24 @@
         .surprise {
             font-style: italic;
             color: greenyellow;
-            font-size: 20px;
+            font-size:small;
             margin-left: 20px;
         }
+
+        /* style sheet for "letter" printing */
+ @media print {
+    @page {
+        margin: 0.75in;
+    }
+
+    .grid-container {
+        padding: 5px;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+ }
     </style>
 </head>
 
